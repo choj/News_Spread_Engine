@@ -23,9 +23,9 @@ def black_scholes_pop(stock_price, strike, net_credit, dte, iv, spread_type):
     if dte <= 0 or iv <= 0:
         return 0
     if spread_type == "Bear Call":
-        breakeven = short_strike + net_credit
+        breakeven = strike + net_credit
     else:  # Bull Put
-        breakeven = short_strike - net_credit
+        breakeven = strike - net_credit
         
     T = dte / 365.0
     r = 0.05  # Risk-free rate
